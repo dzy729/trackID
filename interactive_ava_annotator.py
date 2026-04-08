@@ -936,7 +936,7 @@ class BehaviorAnnotator:
             f"Mem:{self.recent_memory_frames}f | "
             f"RoundMode:{'ID' if self.round_by_id else 'FRAME'} | "
             f"AutoNext:{'ON' if self.auto_next_on_click else 'OFF'} | "
-            "Keys: n/right-next p/left-prev r-nextPig z-undo i-setID c-clearID a-setAct x-clearAct s-save q-quit | "
+            "Keys: d/right-next a/left-prev r-nextPig z-undo i-setID c-clearID t-setAct x-clearAct s-save q-quit | "
             "Mouse: left=assign(mid pickID) right=deleteID+action ctrl+right=deleteID right(empty)=undo"
         )
         cv2.putText(
@@ -1013,10 +1013,10 @@ class BehaviorAnnotator:
                     continue
 
                 # Windows arrow key codes from waitKeyEx: right=2555904, left=2424832
-                if key in (ord("n"), ord("N"), 2555904):
+                if key in (ord("n"), ord("N"), ord("d"), ord("D"), 2555904):
                     self._go_next_frame()
 
-                elif key in (ord("p"), ord("P"), 2424832):
+                elif key in (ord("p"), ord("P"), ord("a"), ord("A"), 2424832):
                     self._go_prev_frame()
 
                 elif key == ord("s"):
@@ -1029,7 +1029,7 @@ class BehaviorAnnotator:
                     self.active_id = None
                     print("Active ID cleared.")
 
-                elif key in (ord("a"), ord("A")):
+                elif key in (ord("t"), ord("T")):
                     cur = "None" if self.active_action is None else self.active_action
                     val = input(f"Set active action (current={cur}; empty=clear): ").strip()
                     self.active_action = val if val else None

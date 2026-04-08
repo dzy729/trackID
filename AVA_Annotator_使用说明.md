@@ -115,10 +115,12 @@ python H:\pycharm_project\trackID\interactive_ava_annotator.py --help
 |---|---|
 | `i` | 设置当前 `ActiveID` |
 | `c` | 清空 `ActiveID` |
-| `a` | 设置当前 `ActiveAction` |
+| `t` | 设置当前 `ActiveAction` |
 | `x` | 清空 `ActiveAction` |
-| `n` / 右箭头 | 下一帧 |
-| `p` / 左箭头 | 上一帧 |
+| `d` / 右箭头 | 下一帧 |
+| `a` / 左箭头 | 上一帧 |
+| `n` | 下一帧（兼容保留） |
+| `p` | 上一帧（兼容保留） |
 | `r` | 下一头猪（回到第 1 帧并可设置新 ID） |
 | `z` | 撤回上一步 |
 | `s` | 立即保存 |
